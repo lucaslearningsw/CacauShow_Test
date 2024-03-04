@@ -1,0 +1,28 @@
+
+<div class="container my-5">
+
+<h1 class="mb-3">Usuarios</h1>
+
+
+<table class="table" *ngIf="users && users.length > 0">
+    <thead>
+        <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Cidade</th>
+       </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{user.name}}</td>
+            <td>{{user.userEmail}}</td>
+            <td>{{user.city}}</td>
+            <th><a [routerLink]="['/user','edit',user.id]">Editar</a></th>
+
+        </tr>
+       
+    </tbody>
+</table>
+
+<p *ngIf="!users || users.length <= 0">Nenhum usuario encontrado</p>
+</div>

@@ -1,0 +1,42 @@
+
+<div class="container my-5">
+
+    <h1 class="mb-3">Editar Usúario</h1>
+
+<div class="row">
+
+    <div class="col-6">
+        <form #form="ngForm" (ngSubmit)="updateUser()" >
+            <div class="mb-3"  style="text-align: left;">
+                <label class="form-label" for="typeEmailX">Nome</label>
+              <input type="text" class="form-control form-control-lg" id="name"  name="name" [(ngModel)]="userDetails.name"  />
+            </div>
+    
+            <div class="mb-3"  style="text-align: left;">
+                <label class="form-label" for="typeEmailX">E-mail</label>
+                <input type="email" class="form-control form-control-lg" id="userEmail" name="userEmail"[(ngModel)]="userDetails.userEmail"  />
+            </div>
+    
+            <div class="mb-3"  style="text-align: left;">
+                <label class="form-label" >Cidade</label>
+                <input type="text" class="form-control form-control-lg" id="city" name="city" [(ngModel)]="userDetails.city"   />
+            </div>
+            <button type="submit" class="btn btn-primary" style="margin-right: 10px;">Salvar</button>
+            <button class="btn btn-secondary" style="margin-right: 10px;" routerLink='/dashboard'>Voltar</button>
+            </form>
+            <button class="btn btn-danger"  style="margin-right: 10px;"
+            (click)="deleteUser(userDetails.id)">Deletar</button>
+
+          
+    </div>
+</div>
+  
+
+</div>
+
+
+            
+  
+             
+
+     

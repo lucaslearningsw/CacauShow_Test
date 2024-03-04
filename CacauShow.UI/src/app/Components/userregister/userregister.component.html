@@ -1,0 +1,53 @@
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-dark text-white" style="border-radius: 1rem;">
+            <div class="card-body p-5 text-center">
+  
+              <div class="mb-md-5 mt-md-4 pb-5">
+  
+                <h2 class="fw-bold mb-2 text-uppercase">REGISTRAR-SE</h2>
+            
+                <form [formGroup]="registerFrom">
+                <div class="form-outline form-white mb-4 mb-4"  style="text-align: left;">
+                    <label class="form-label" for="typeEmailX">Nome</label>
+                  <input type="name" formControlName="name"  class="form-control form-control-lg" />
+                  <small *ngIf="registerFrom.controls['name'].dirty && registerFrom.hasError('required','name')"  class="text-danger">*Preencha o campo Nome</small>
+                </div>
+  
+                <div class="form-outline form-white mb-4 mb-4"  style="text-align: left;">
+                    <label class="form-label" for="typeEmailX">E-mail</label>
+                  <input type="email" formControlName="UserEmail"  class="form-control form-control-lg" />
+                  <small *ngIf="registerFrom.controls['UserEmail'].dirty && registerFrom.hasError('required','UserEmail')"  class="text-danger">*Preencha o campo Email</small>
+                </div>
+
+                <div class="form-outline form-white mb-4"  style="text-align: left;">
+                    <label class="form-label" for="typePasswordX">Senha</label>
+                  <input type="password" formControlName="password" class="form-control form-control-lg" />
+                  <small *ngIf="registerFrom.controls['password'].dirty && registerFrom.hasError('required','email')"  class="text-danger">*Preencha o campo Senha</small>
+                </div>
+
+                <div class="form-outline form-white mb-4"  style="text-align: left;">
+                    <label class="form-label" >Cidade</label>
+                  <input type="text" formControlName="city"class="form-control form-control-lg" />
+                  <small *ngIf="registerFrom.controls['city'].dirty && registerFrom.hasError('required','city')"  class="text-danger">*Preencha o campo Cidade</small>
+                </div>
+  
+                </form>
+                <button  (click)="onRegisterUser()" [disabled]="registerFrom.invalid" class="btn btn-outline-light btn-lg px-5" type="submit">Concluir</button>
+  
+             
+              </div>
+  
+              <div>
+                <p class="mb-0"> <a href="#!" class="text-white-50 fw-bold" routerLink="/login" >Voltar</a>
+                </p>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
